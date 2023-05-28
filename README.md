@@ -26,7 +26,7 @@ To use the sample code in this repository, you will need to have the following s
 To run the sample code in this repository, follow these steps:
 
 1. Clone the repository to your local machine using
-   Git: `git clone https://github.com/jwkwon0817/spring-thymeleaf-item-service.git`
+   Git: `git clone https://github.com/jwkwon0817/spring-message.git`
 2. Open the project in your preferred IDE.
 3. Build the project using Gradle.
 4. Run the sample code in the IDE or from the command line.
