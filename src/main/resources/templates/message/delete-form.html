@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+	<title th:text="#{page.deleteItem}"></title>
+	<style>
+		.container {
+			max-width: 560px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="py-5 text-center">
+			<h2 th:text="#{page.deleteItem}"></h2>
+		</div>
+		<h4 class="mb-3" th:text="#{page.deleteItem}"></h4>
+		<div>
+			<table class="table">
+				<thead>
+				<tr>
+					<th th:text="#{label.item.id}"></th>
+					<th th:text="#{label.item.name}"></th>
+					<th th:text="#{label.price}"></th>
+					<th th:text="#{label.quantity}"></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><a th:href="@{|/message/items/${item.id}|}" th:text="${item.id}" id="item-id">ID</a></td>
+					<td><a th:href="@{|/message/items/${item.id}|}" th:text="${item.itemName}">Name</a></td>
+					<td th:text="${item.price}">Price</td>
+					<td th:text="${item.quantity}">Quantity</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<form th:action method="post">
+			<div class="row">
+				<div class="col">
+					<button class="w-100 btn btn-danger btn-lg"
+					        id="btn-delete"
+					        type="submit"
+					        th:text="#{page.deleteItem}"></button>
+				</div>
+				<div class="col">
+					<button class="w-100 btn btn-secondary btn-lg"
+					        th:onclick="|location.href='@{/message/items/{itemId}(itemId=${item.id})}'|"
+					        type="button"
+					        th:text="#{button.cancel}">
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
